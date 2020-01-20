@@ -9,6 +9,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
+    redirect to "/articles"
   end
 
   get '/posts/new' do
@@ -51,6 +52,6 @@ class ApplicationController < Sinatra::Base
     @post = Post.find(params[:id])
     @post.destroy
 
-    erb :delete 
+    erb :delete
   end
 end
